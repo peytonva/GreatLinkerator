@@ -11,7 +11,7 @@ const {
   popData
 } = require('./index');
 
-/*------------------------DROPtABLES------------------------- */
+
 async function drop() {
   try {
     console.log("Starting to drop tables...");
@@ -29,7 +29,6 @@ async function drop() {
   }
 }
 
-/*------------------------BUILDtABLES------------------------- */
 async function buildTables() {
   try {
     console.log('Starting to build tables...')
@@ -57,7 +56,7 @@ async function buildTables() {
   }
 };
 
-/*------------------------INSERTlINK------------------------- */
+
 async function insertLink({ name, url }) {
   try {
     await client.query(`
@@ -73,7 +72,7 @@ async function insertLink({ name, url }) {
   }
 };
 
-/*------------------------POPULATEiNITIALdATA------------------------- */
+
 async function populateInitialData() {
   try {
     const [YouTube, Reddit, Google] = await popData();
@@ -98,7 +97,6 @@ async function populateInitialData() {
   }
 };
 
-/*------------------------CREATEtAGS------------------------- */
 
 async function createTags(name) {
   try {
@@ -120,7 +118,6 @@ async function createTags(name) {
   }
 };
 
-/*------------------------INSERTtAGS------------------------- */
 async function insertTags({ id, name }) {
   try {
     await client.query(`
@@ -135,7 +132,6 @@ async function insertTags({ id, name }) {
   }
 };
 
-/*------------------------INSERTlINKtAGS------------------------- */
 async function insertLinkTags({ id, tagsId, linkId }) {
   try {
     await client.query(`

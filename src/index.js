@@ -16,45 +16,43 @@ import {
 
 
 
-const App = () => {
-  const [linkList, setLinkList] = useState([]);
-  const [App] = useState([]);
-  useEffect(() => {
-    getLink()
-      .then(link => {
-        setLinkList(link)
-      })
-      .catch(error => {
-        // something errors
-      });
-  }, []);
-  useEffect(() => {
-    if (!currentLink) {
-      setLinkEntries([]);
-      setTags([]);
-      return;
-    }
-    getLinkByUser(currentLink.id)
-      .then(link => {
-        setUserLink(link);
-      })
-      .catch(error => {
-        // something errors
-      });
-    getTagsByUser(currentTag.id)
-      .then(tags => {
-        setUserTags(tags);
-      })
-      .catch(error => {
-        // something errors
-      });
-  }, [currentUser]);
-  return (
-    <div id="App"></div>
-  );
+// const App = () => {
+//   const [linkList, setLinkList] = useState([]);
+//   useEffect(() => {
+//     getLink()
+//       .then(link => {
+//         setLinkList(link)
+//       })
+//       .catch(error => {
+//       });
+//   }, []);
+//   useEffect(() => {
+//     if (!currentLink) {
+//       setLinkEntries([]);
+//       setTags([]);
+//       return;
+//     }
+//     getLinkByUser(currentLink.id)
+//       .then(link => {
+//         setUserLink(link);
+//       })
+//       .catch(error => {
+//         // something errors
+//       });
+//     getTagsByUser(currentTag.id)
+//       .then(tags => {
+//         setUserTags(tags);
+//       })
+//       .catch(error => {
+//         // something errors
+//       });
+//   }, [currentUser]);
+//   return (
+//     <div id="App"></div>
+//   );
 
 
 ReactDOM.render(
   <App/>,
   document.getElementById('root')
-)};
+);
